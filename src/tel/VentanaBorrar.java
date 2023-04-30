@@ -5,6 +5,7 @@
  */
 package tel;
 
+import java.util.ArrayList;
 import javax.swing.JOptionPane;
 
 /**
@@ -58,6 +59,12 @@ public class VentanaBorrar extends javax.swing.JFrame {
         jLabel9.setText("NOMBRE:");
 
         jLabel10.setText("CIUDAD:");
+
+        jTtelefono.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTtelefonoActionPerformed(evt);
+            }
+        });
 
         jTapellido.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -164,7 +171,7 @@ public class VentanaBorrar extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jTapellidoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTapellidoActionPerformed
-        // TODO add your handling code here:
+      //
     }//GEN-LAST:event_jTapellidoActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
@@ -188,9 +195,6 @@ public class VentanaBorrar extends javax.swing.JFrame {
         jTciudad.setText(cliente.getCiudad());
         jTnombre.setText(cliente.getNombre());
        
-        
-        
-        
         }// TODO add your handling code here:
     }//GEN-LAST:event_jButton1ActionPerformed
 
@@ -200,6 +204,10 @@ public class VentanaBorrar extends javax.swing.JFrame {
       ventana.setVisible(true);
               
     }//GEN-LAST:event_jButton3ActionPerformed
+
+    private void jTtelefonoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTtelefonoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTtelefonoActionPerformed
 
     /**
      * @param args the command line arguments

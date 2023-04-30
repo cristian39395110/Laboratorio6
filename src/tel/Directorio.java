@@ -53,7 +53,7 @@ public class Directorio {
     }
 
     public static ArrayList<String> buscarTelefono(String apellido) {
-
+        
         ArrayList<String> num = new ArrayList<String>();
         for (Map.Entry<String, Cliente> entry : registro.entrySet()) {
             Cliente aux = buscarCliente(entry.getKey());
