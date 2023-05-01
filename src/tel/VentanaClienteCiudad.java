@@ -36,7 +36,7 @@ public class VentanaClienteCiudad extends javax.swing.JFrame {
         jLabel10 = new javax.swing.JLabel();
         jTciudad = new javax.swing.JTextField();
         jButton1 = new javax.swing.JButton();
-        jButton3 = new javax.swing.JButton();
+        jBuscar = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         jListadoClientes = new javax.swing.JList<>();
 
@@ -56,10 +56,10 @@ public class VentanaClienteCiudad extends javax.swing.JFrame {
             }
         });
 
-        jButton3.setText("SALIR");
-        jButton3.addActionListener(new java.awt.event.ActionListener() {
+        jBuscar.setText("SALIR");
+        jBuscar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton3ActionPerformed(evt);
+                jBuscarActionPerformed(evt);
             }
         });
 
@@ -70,27 +70,28 @@ public class VentanaClienteCiudad extends javax.swing.JFrame {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
+                .addGap(44, 44, 44)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(400, 400, 400)
-                        .addComponent(jButton3))
+                        .addComponent(jClientes, javax.swing.GroupLayout.PREFERRED_SIZE, 57, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 630, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(44, 44, 44)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(jClientes, javax.swing.GroupLayout.PREFERRED_SIZE, 57, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 347, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(jLabel10)
-                                .addGap(18, 18, 18)
-                                .addComponent(jTciudad, javax.swing.GroupLayout.PREFERRED_SIZE, 272, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(jButton1))))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(229, 229, 229)
+                        .addGap(336, 336, 336)
                         .addComponent(jLabel1)))
-                .addContainerGap(78, Short.MAX_VALUE))
+                .addContainerGap(26, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(jLabel10)
+                .addGap(18, 18, 18)
+                .addComponent(jTciudad, javax.swing.GroupLayout.PREFERRED_SIZE, 272, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jButton1)
+                .addGap(151, 151, 151))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jBuscar)
+                .addGap(323, 323, 323))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -109,7 +110,7 @@ public class VentanaClienteCiudad extends javax.swing.JFrame {
                         .addGap(0, 0, Short.MAX_VALUE))
                     .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 272, Short.MAX_VALUE))
                 .addGap(18, 18, 18)
-                .addComponent(jButton3)
+                .addComponent(jBuscar)
                 .addGap(34, 34, 34))
         );
 
@@ -118,6 +119,7 @@ public class VentanaClienteCiudad extends javax.swing.JFrame {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         jListadoClientes.setModel(modelo);
+        modelo.clear();
         String ciudad=jTciudad.getText();
       ArrayList<Cliente>clientes=Directorio.buscarClientes(ciudad);
         if (clientes.isEmpty())
@@ -125,18 +127,18 @@ public class VentanaClienteCiudad extends javax.swing.JFrame {
         else{
             JOptionPane.showMessageDialog(null, "Cliente  encontrado");
             for (Cliente c : clientes) {
-                modelo.addElement("Nombre:"+c.getNombre()+"|Apellido:"+c.getApellido()+"|Dni:"+c.getDni()+"|Direccion:"+c.getDireccion());
+                modelo.addElement("Nombre:"+c.getNombre()+"   |Apellido:"+c.getApellido()+"   |Dni:"+c.getDni()+"   |Direccion:"+c.getDireccion());
             }
        
         }// TODO add your handling code here:
     }//GEN-LAST:event_jButton1ActionPerformed
 
-    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+    private void jBuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBuscarActionPerformed
       ventana4 ventana=new ventana4();
       this.setVisible(false);
       ventana.setVisible(true);
               
-    }//GEN-LAST:event_jButton3ActionPerformed
+    }//GEN-LAST:event_jBuscarActionPerformed
 
     /**
      * @param args the command line arguments
@@ -144,8 +146,8 @@ public class VentanaClienteCiudad extends javax.swing.JFrame {
  
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton jBuscar;
     private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton3;
     private javax.swing.JLabel jClientes;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
