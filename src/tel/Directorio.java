@@ -17,7 +17,7 @@ public class Directorio {
         for (Map.Entry<String, Cliente> entry : registro.entrySet()) {
             String key = entry.getKey();
             Cliente value = entry.getValue();
-            if (numTelefono.equals(key)) {
+            if (numTelefono.equalsIgnoreCase(key)) {
                 return value;
             }
         }
@@ -34,7 +34,7 @@ public class Directorio {
             String claveActual = it.next();
             Cliente clienteActual = registro.get(claveActual);
 
-            if (clienteActual.getCiudad().equals(ciudad)) {
+            if (clienteActual.getCiudad().equalsIgnoreCase(ciudad)) {
                 buscar.add(clienteActual);
             }
         }
@@ -57,7 +57,7 @@ public class Directorio {
         ArrayList<String> num = new ArrayList<String>();
         for (Map.Entry<String, Cliente> entry : registro.entrySet()) {
             Cliente aux = buscarCliente(entry.getKey());
-            if (aux.getApellido().equals(apellido)) {
+            if (aux.getApellido().equalsIgnoreCase(apellido)) {
                 num.add(entry.getKey());
             }
         }

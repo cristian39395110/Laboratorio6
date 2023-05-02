@@ -133,7 +133,7 @@ ventana.setVisible(true);
 
     private void jSalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jSalirActionPerformed
         // TODO add your handling code here:
-       this.dispose();
+       dispose();
     }//GEN-LAST:event_jSalirActionPerformed
 
     /**
